@@ -1,4 +1,7 @@
-# vb4c Changelog
+# vimch Changelog
+
+## 0.0.3 - 21 May 2022
+- Fix white iframe background popup for pages with color schemes (diff [#824a2b8](https://github.com/b-coimbra/vimch/commit/824a2b862638cc4f528c746e26138aff88b07e2c)).
 
 ## 0.0.2 - 13 March 2020
 - Fix command bar focus issue (Thanks @tinywrkb and @basyura)

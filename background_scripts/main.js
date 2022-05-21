@@ -142,7 +142,7 @@ var Listeners = {
   commands: {
     onCommand: function(command) {
       switch (command) {
-      case 'togglecVim':
+      case 'toggleExtension':
         Popup.toggleEnabled({});
         break;
       case 'toggleBlacklisted':
@@ -194,7 +194,7 @@ var Listeners = {
       case 'newTab':
         chrome.tabs.create({url: chrome.runtime.getURL('pages/blank.html')});
         break;
-      case 'restartcVim':
+      case 'restartExtension':
         chrome.runtime.reload();
         break;
       default:

@@ -1,10 +1,10 @@
 {
-  "name": "vb4c",
-  "author": "Jake Eaton <1995eaton@gmail.com> (Original), Dakota Chambers <dakotachambers@gmail.com",
-  "description": "vb4c - Vim bindings for Chrome.",
+  "name": "vimch",
+  "author": "Jake Eaton <1995eaton@gmail.com> (Original), Dakota Chambers <dakotachambers@gmail.com, Bruno Coimbra <mail@metaphoric.dev>",
+  "description": "vimch - Vim bindings for Chromium.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dcchambers/vb4c"
+    "url": "https://github.com/b-coimbra/vimch"
   },
   "private": true,
   "devDependencies": {

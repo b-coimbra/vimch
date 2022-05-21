@@ -1,3 +1,4 @@
+// TODO: Create a toggle instead of a button
 var pause = document.getElementById('pause'),
     blacklist = document.getElementById('blacklist'),
     settings = document.getElementById('settings'),
@@ -7,7 +8,7 @@ var pause = document.getElementById('pause'),
 var port = chrome.extension.connect({name: 'popup'});
 port.onMessage.addListener(function(data) {
   if (data === true) {
-    blacklist.textContent = 'Enable vb4c on this domain';
+    blacklist.textContent = 'Enable vimch on this domain';
     isBlacklisted = true;
   }
 });
@@ -16,9 +17,9 @@ port.postMessage({action: 'getBlacklisted'});
 chrome.runtime.sendMessage({action: 'getActiveState'}, function(response) {
   isEnabled = response;
   if (isEnabled) {
-    pause.textContent = 'Disable vb4c';
+    pause.textContent = 'Disable vimch';
   } else {
-    pause.textContent = 'Enable vb4c';
+    pause.textContent = 'Enable vimch';
   }
 });
 
@@ -33,19 +34,19 @@ settings.addEventListener('click', function() {
 pause.addEventListener('click', function() {
   isEnabled = !isEnabled;
   if (isEnabled) {
-    pause.textContent = 'Disable vb4c';
+    pause.textContent = 'Disable vimch';
   } else {
-    pause.textContent = 'Enable vb4c';
+    pause.textContent = 'Enable vimch';
   }
   port.postMessage({action: 'toggleEnabled', blacklisted: isBlacklisted});
 }, false);
 
 blacklist.addEventListener('click', function() {
   isBlacklisted = !isBlacklisted;
-  if (blacklist.textContent === 'Disable vb4c on this domain') {
-    blacklist.textContent = 'Enable vb4c on this domain';
+  if (blacklist.textContent === 'Disable vimch on this domain') {
+    blacklist.textContent = 'Enable vimch on this domain';
   } else {
-    blacklist.textContent = 'Disable vb4c on this domain';
+    blacklist.textContent = 'Disable vimch on this domain';
   }
   port.postMessage({action: 'toggleBlacklisted'});
   if (isEnabled) {
