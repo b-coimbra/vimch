@@ -60,6 +60,7 @@ Mappings.defaults = [
   ['S',         'goBack'],
   ['gr',        'reverseImage'],
   ['mr',        'multiReverseImage'],
+  ['mi',        'saveImageHint'],
   ['L',         'goForward'],
   ['D',         'goForward'],
   ['[d',        'previousDomain'],

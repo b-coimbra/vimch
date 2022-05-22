@@ -141,7 +141,7 @@ Hints.dispatchAction = function(link, shift) {
     RUNTIME('openLinkTab', {active: false, url: link.src, noconvert: true});
     break;
   case 'saveimage':
-    RUNTIME('saveImage', {url: link.src,});
+    RUNTIME('saveImage', {url: link.src});
     break;
   case 'image':
   case 'multiimage':
