@@ -60,6 +60,7 @@ Mappings.defaults = [
   ['S',         'goBack'],
   ['gr',        'reverseImage'],
   ['mr',        'multiReverseImage'],
+  ['mi',        'saveImageHint'],
   ['L',         'goForward'],
   ['D',         'goForward'],
   ['[d',        'previousDomain'],
@@ -438,6 +439,7 @@ Mappings.actions = {
   yankUrl: function() { Hints.create('yank'); },
   multiYankUrl: function() { Hints.create('multiyank'); },
   fullImageHint: function() { Hints.create('fullimage'); },
+  saveImageHint: function() { Hints.create('saveimage'); },
   yankDocumentUrl: function() {
     RUNTIME('getRootUrl', function(url) {
       Clipboard.copy(url);
