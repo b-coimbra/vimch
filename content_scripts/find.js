@@ -125,7 +125,6 @@ Find.highlight = function(params) {
       linksOnly = false;
 
   markBase.className = 'cVim-find-mark';
-  // markBase.id = Math.floor(Math.random() * 1e4);
 
   this.mode = params.mode || '/';
   if (params.saveSearch)
