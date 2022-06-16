@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "vimch",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "vimch: Vim Bindings For Chromium. A fork of cVim.",
   "icons": {
     "128": "icons/128.png",

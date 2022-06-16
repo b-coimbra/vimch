@@ -61,9 +61,6 @@ var Complete = {
       return defaultEngine.requestUrl + encodeURIComponent(searchTerms.join(' '));
     };
 
-    if (!this.engineEnabled(input[0]))
-      return callDefaultEngine(input);
-
     if (!this.hasEngine(input[0])) {
       if (!isLink && (isURL || Utils.isValidURL(input.join(' ')))) {
         input = input.join(' ');
@@ -81,6 +78,9 @@ var Complete = {
     var suffix = engine.hasOwnProperty('formatRequest') ?
       engine.formatRequest(input.slice(1).join(' ')) :
       encodeURIComponent(input.slice(1).join(' '));
+
+    if (!this.engineEnabled(input[0]))
+      return callDefaultEngine(input);
 
     if (Utils.isValidURL(suffix))
       return Utils.toSearchURL(suffix);
