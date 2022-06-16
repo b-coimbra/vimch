@@ -1,6 +1,6 @@
 # vimch
 
-![v](https://img.shields.io/badge/version-0.0.4-green)
+![v](https://img.shields.io/badge/version-0.0.41-green)
 
 vimch - Vim Bindings for Chromium. This is a fork of [cVim](https://github.com/1995eaton/chromium-vim) (discontinued) and [vb4c](https://github.com/dcchambers/vb4c) (archived).
 
