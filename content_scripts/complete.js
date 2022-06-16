@@ -52,16 +52,25 @@ var Complete = {
       return '';
 
     input[0] = this.getAlias(input[0]) || input[0];
+
+    const callDefaultEngine = (searchTerms) => {
+      const defaultEngine =
+            Complete.getEngine(settings.defaultengine) ??
+            Complete.getEngine('google');
+
+      return defaultEngine.requestUrl + encodeURIComponent(searchTerms.join(' '));
+    };
+
+    if (!this.engineEnabled(input[0]))
+      return callDefaultEngine(input);
+
     if (!this.hasEngine(input[0])) {
       if (!isLink && (isURL || Utils.isValidURL(input.join(' ')))) {
         input = input.join(' ');
         return (!/^[a-zA-Z\-]+:/.test(input) ? 'http://' : '') +
           input;
       }
-      var defaultEngine = this.getEngine(settings.defaultengine);
-      return (defaultEngine ? defaultEngine.requestUrl :
-                              this.getEngine('google').requestUrl) +
-        encodeURIComponent(input.join(' '));
+      return callDefaultEngine(input);
     }
 
     var engine = this.getEngine(input[0]);
@@ -134,7 +143,7 @@ var Complete = {
       this.activeEngines.push(name);
   },
   engineEnabled: function(name) {
-    return this.activeEngines.indexOf(name) !== -1;
+    return this.hasEngine(name) && this.activeEngines.indexOf(name) !== -1;
   }
 };
 
