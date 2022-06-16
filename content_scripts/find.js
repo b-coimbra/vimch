@@ -125,6 +125,7 @@ Find.highlight = function(params) {
       linksOnly = false;
 
   markBase.className = 'cVim-find-mark';
+  // markBase.id = Math.floor(Math.random() * 1e4);
 
   this.mode = params.mode || '/';
   if (params.saveSearch)
@@ -239,10 +240,19 @@ Find.highlight = function(params) {
 };
 
 Find.clear = function() {
-  var nodes = this.matches;
-  for (var i = 0; i < nodes.length; i++)
-    if (nodes[i] && nodes[i].parentNode && nodes[i].firstChild)
-      nodes[i].parentNode.replaceChild(nodes[i].firstChild, nodes[i]);
-  document.documentElement.normalize();
+  const nodes = this.matches;
+  let nodesToNormalize = [];
+
+  for (let i = 0; i < nodes.length; i++) {
+    const { parentNode, firstChild } = nodes[i];
+
+    if (nodes[i] && parentNode && firstChild) {
+      nodesToNormalize.push(parentNode);
+      parentNode.replaceChild(firstChild, nodes[i]);
+    }
+  }
+
+  nodesToNormalize.forEach(node => node.normalize());
+
   this.matches = [];
 };
