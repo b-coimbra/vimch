@@ -6,7 +6,7 @@ vimch - Vim Bindings for Chromium. This is a fork of [cVim](https://github.com/1
 
 # Install
   - Manually install the extension from the
-    [releases](https://github.com/dcchambers/vb4c/releases) page on GitHub.
+    [releases](https://github.com/b-coimbra/vimch/releases) page on GitHub.
     - Download the `.zip` file, extract it, and then manually load the
       extension in chrome.
       - Go to `chrome://extensions`
