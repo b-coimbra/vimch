@@ -24,6 +24,8 @@ Popup.getActiveTab = function(callback) {
 
 Popup.setIconDisabled = function() {
   this.getActiveTab(function(tab) {
+    if (!tab) return;
+
     chrome.browserAction.setIcon({
       path: 'icons/disabled.png',
       tabId: tab.id

@@ -791,8 +791,8 @@ Actions = (function() {
     }
   };
 
-  _.hideCommandFrame = function(o) {
-    chrome.tabs.sendMessage(o.sender.tab.id, {
+  _.hideCommandFrame = async function(o) {
+    await chrome.tabs.sendMessage(o.sender.tab.id, {
       action: o.request.action
     }, function() {
       var frame = Frames.get(o.sender.tab.id);

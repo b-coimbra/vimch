@@ -963,7 +963,7 @@ Command.show = function(search, value, complete) {
 
 Command.hide = function(callback) {
   if (window.isCommandFrame)
-    this.input.blur();
+    this.input?.blur();
   commandMode = false;
   this.historyMode = false;
   this.active = false;
